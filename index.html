@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Midnight - Your Music Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Now Playing Bar (Bottom) -->
+    <div class="now-playing-bar" id="nowPlayingBar">
+        <div class="now-playing-left">
+            <div class="album-art">
+                <img id="currentAlbumArt" src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Album Art">
+            </div>
+            <div class="song-info">
+                <div class="song-title" id="currentSongTitle">Select a song</div>
+                <div class="song-artist" id="currentSongArtist">Midnight</div>
+            </div>
+            <button class="like-btn" id="likeBtn">
+                <span class="material-icons">favorite_border</span>
+            </button>
+        </div>
+        
+        <div class="now-playing-center">
+            <div class="playback-controls">
+                <button class="control-btn" id="shuffleBtn">
+                    <span class="material-icons">shuffle</span>
+                </button>
+                <button class="control-btn" id="prevBtn">
+                    <span class="material-icons">skip_previous</span>
+                </button>
+                <button class="control-btn play-btn" id="playPauseBtn">
+                    <span class="material-icons" id="playPauseIcon">play_arrow</span>
+                </button>
+                <button class="control-btn" id="nextBtn">
+                    <span class="material-icons">skip_next</span>
+                </button>
+                <button class="control-btn" id="repeatBtn">
+                    <span class="material-icons">repeat</span>
+                </button>
+            </div>
+            <div class="progress-container">
+                <span class="time-current" id="currentTime">0:00</span>
+                <div class="progress-bar">
+                    <input type="range" id="progressSlider" value="0" step="1" class="progress-slider">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="time-total" id="totalTime">0:00</span>
+            </div>
+        </div>
+        
+        <div class="now-playing-right">
+            <div class="volume-control">
+                <span class="material-icons">volume_up</span>
+                <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+            </div>
+            <div class="user-profile" id="userProfile">
+                <span class="material-icons">account_circle</span>
+                <span id="usernameDisplay">Guest</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <svg class="Midnight-logo" viewBox="0 0 167.5 167.5" width="32" height="32">
+                    <path fill="#1DB954" d="M83.7 0C37.5 0 0 37.5 0 83.7c0 46.3 37.5 83.7 83.7 83.7 46.3 0 83.7-37.5 83.7-83.7S130 0 83.7 0zM122 120.8c-1.4 2.5-4.6 3.2-7.1 1.7-19.5-11.9-44-14.6-72.9-8-2.8.7-5.6-1-6.3-3.8-.7-2.8 1-5.6 3.8-6.3 31.3-7 57.8-4 79.2 9 2.5 1.5 3.2 4.6 1.7 7.1zm10.3-22.6c-1.8 2.9-5.4 3.8-8.3 2-22.5-13.8-56.8-17.8-83.4-9.7-3.2.9-6.5-1-7.4-4.2-.9-3.2 1-6.5 4.2-7.4 30-8.3 67.5-3.9 92.9 11.3 2.9 1.8 3.8 5.4 2 8.3zm.9-23.6c-27-16-71.6-17.5-97.4-9.7-3.8 1.1-7.8-1-8.9-4.8-1.1-3.8 1-7.8 4.8-8.9 29.2-8.5 77.8-6.8 108.4 11.3 3.4 2 4.6 6.2 2.6 9.6-2 3.4-6.2 4.6-9.5 2.5z"/>
+                </svg>
+                <h1>Midnight</h1>
+            </div>
+            
+            <nav class="nav-menu">
+                <div class="nav-item active" data-view="home">
+                    <span class="material-icons">home</span>
+                    <span>Home</span>
+                </div>
+                <div class="nav-item" data-view="search">
+                    <span class="material-icons">search</span>
+                    <span>Search</span>
+                </div>
+                <div class="nav-item" data-view="library">
+                    <span class="material-icons">library_music</span>
+                    <span>Your Library</span>
+                </div>
+            </nav>
+
+            <div class="playlists-section">
+                <div class="playlists-header">
+                    <span>YOUR PLAYLISTS</span>
+                    <button class="create-btn" id="createPlaylistBtn">
+                        <span class="material-icons">add</span>
+                    </button>
+                </div>
+                <div id="playlistList" class="playlist-list">
+                    <!-- Playlists will be loaded here -->
+                </div>
+            </div>
+
+            <div class="user-stats" id="userStats" style="padding: 16px; text-align: center;">
+                0 songs • 0 playlists
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-buttons">
+                    <button class="nav-arrow" id="backBtn">
+                        <span class="material-icons">chevron_left</span>
+                    </button>
+                    <button class="nav-arrow" id="forwardBtn">
+                        <span class="material-icons">chevron_right</span>
+                    </button>
+                </div>
+                <div class="search-bar">
+                    <span class="material-icons">search</span>
+                    <input type="text" id="globalSearch" placeholder="What do you want to listen to?" class="search-input">
+                </div>
+                <div class="user-menu">
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div id="contentArea" class="content-area">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+        </main>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

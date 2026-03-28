@@ -1,0 +1,39 @@
+{
+    "playlists": [
+        {
+            "id": "suicideboys",
+            "name": "$uicideboy$",
+            "icon": "🎧",
+            "color": "#8B0000",
+            "file": "playlists/suicideboys.json"
+        },
+        {
+            "id": "bones",
+            "name": "BONES",
+            "icon": "💀",
+            "color": "#2F4F4F",
+            "file": "playlists/bones.json"
+        },
+        {
+            "id": "Weeknd",
+            "name": "Weeknd",
+            "icon": "💔",
+            "color": "#FF69B4",
+            "file": "playlists/Weeknd.json"
+        },
+        {
+            "id": "jazeek",
+            "name": "Jazeek",
+            "icon": "🇩🇪",
+            "color": "#000000",
+            "file": "playlists/jazeek.json"
+        },
+        {
+            "id": "lilpeep",
+            "name": "Lil Peep",
+            "icon": "🖤",
+            "color": "#9370DB",
+            "file": "playlists/lilpeep.json"
+        }
+    ]
+}
