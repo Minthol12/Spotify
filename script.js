@@ -1,5 +1,4 @@
 // ============ COMPLETE SONG DATABASE ============
-// ============ COMPLETE SONG DATABASE WITH YOUR ACTUAL FILENAMES ============
 
 // Helper function to clean filenames for matching
 function getFileFromTitle(artist, title) {
@@ -36,7 +35,7 @@ const suicideboysSongs = [
     { title: "Let Em Burn", artist: "$uicideboy$", duration: 142 },
     { title: "Low Key", artist: "$uicideboy$", duration: 138 },
 ];
-// JAZEEK PLAYLIST (Based on your actual filenames)
+// JAZEEK PLAYLIST
 const jazeekSongs = [
     { title: "112", artist: "Jazeek", duration: 168 },
     { title: "AKON", artist: "Jazeek", duration: 176 },
@@ -97,7 +96,7 @@ const jazeekSongs = [
     { title: "Wunderschön", artist: "Jazeek", duration: 164 }
 ];
 
-// LIL PEEP PLAYLIST (Based on your actual filenames)
+// LIL PEEP PLAYLIST 
 const lilPeepSongs = [
     { title: "2008", artist: "Lil Peep", duration: 142 },
     { title: "cobain", artist: "Lil Peep", duration: 149 },
@@ -148,7 +147,7 @@ const lilPeepSongs = [
     { title: "Text Me (feat. Era)", artist: "Lil Peep", duration: 168 }
 ];
 
-// BONES PLAYLIST (Based on your actual filenames)
+// BONES PLAYLIST
 const bonesSongs = [
     { title: "3M", artist: "Bones", duration: 148 },
     { title: "Air", artist: "Bones", duration: 148 },
@@ -209,7 +208,7 @@ const ghostemaneSongs = [
     { title: "Wishers Lose Copper Dreamers Lose Everything", artist: "Ghostemane", duration: 172 }
 ];
 
-// MIX PLAYLIST - Reduced version
+// MIX PLAYLIST 
 const mixSongs = [
     { title: "don t go", artist: "comehelpglo", duration: 164 },
     { title: "Become the Warm Jets", artist: "Current Joys", duration: 192 },
@@ -231,7 +230,6 @@ function createPlaylistSongs(songsArray, artistFolder) {
         artist: song.artist,
         duration: song.duration,
         cover: `images/${artistFolder}.jpg`,
-        // IMPORTANT: This matches your actual filename format "Artist - Title.mp3"
         file: `audio/${artistFolder}/${song.artist} - ${song.title}.mp3`,
         plays: Math.floor(Math.random() * 1000000)
     }));
