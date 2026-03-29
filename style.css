@@ -263,7 +263,24 @@ body {
     height: calc(100vh - 90px);
     overflow: hidden;
 }
+body, .app-container {
+    height: 100dvh; /* Fits exactly to the visible screen */
+    margin: 0;
+    overflow: hidden; /* Prevents the whole page from bouncing */
+    display: flex;
+    flex-direction: column;
+}
 
+/* If your bottom player is getting cut off, give the main content a calculated height */
+.main-content {
+    flex: 1; /* Takes up all space except the player */
+    overflow-y: auto; /* Only the song list scrolls, not the whole app */
+}
+
+.player-bar {
+    height: 90px; /* Keep this fixed */
+    padding-bottom: env(safe-area-inset-bottom); /* Extra protection for UI bars */
+}
 /* Sidebar */
 .sidebar {
     width: 280px;
@@ -849,4 +866,26 @@ body {
     font-size: 0.4em;
     font-weight: 400;
     opacity: 0.7;
+}
+
+.player-bar {
+    /* Adjust this value until the bar sits perfectly above the Chromebook shelf */
+    bottom: 0;
+    position: sticky;
+    z-index: 100;
+}
+
+@media (max-width: 1200px) {
+    .songs-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .song-card {
+        padding: 10px;
+    }
 }
