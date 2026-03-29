@@ -1,5 +1,4 @@
 // ============ COMPLETE SONG DATABASE ============
-// ============ COMPLETE SONG DATABASE WITH YOUR ACTUAL FILENAMES ============
 
 // Helper function to clean filenames for matching
 function getFileFromTitle(artist, title) {
@@ -209,19 +208,6 @@ const ghostemaneSongs = [
     { title: "Wishers Lose Copper Dreamers Lose Everything", artist: "Ghostemane", duration: 172 }
 ];
 
-// MIX PLAYLIST - Reduced version
-const mixSongs = [
-    { title: "don t go", artist: "comehelpglo", duration: 164 },
-    { title: "Become the Warm Jets", artist: "Current Joys", duration: 192 },
-    { title: "Crying (feat. Lil Peep)", artist: "Yunggoth", duration: 173 },
-    { title: "23", artist: "Chase Atlantic", duration: 188 },
-    { title: "3005", artist: "Childish Gambino", duration: 182 },
-    { title: "Nights", artist: "Frank Ocean", duration: 185 },
-    { title: "Good News", artist: "Mac Miller", duration: 185 },
-    { title: "Call Out My Name", artist: "The Weeknd", duration: 182 },
-    { title: "It's Called: Freefall", artist: "Rainbow Kitten Surprise", duration: 218 }
-];
-
 // ============ CREATE PLAYLISTS WITH CORRECT FILE PATHS ============
 
 function createPlaylistSongs(songsArray, artistFolder) {
@@ -243,8 +229,7 @@ const spotifyData = {
         { id: "bones", name: "BONES", description: "Underground legend", cover: "images/bones.jpg" },
         { id: "ghostemane", name: "Ghostemane", description: "Industrial rap", cover: "images/ghostemane.jpg" },
         { id: "jazeek", name: "Jazeek", description: "German rap", cover: "images/jazeek.jpg" },
-        { id: "lilpeep", name: "Lil Peep", description: "Emo rap legend", cover: "images/lilpeep.jpg" },
-        { id: "mix", name: "Mix", description: "Various artists", cover: "images/mix.jpg" }
+        { id: "lilpeep", name: "Lil Peep", description: "Emo rap legend", cover: "images/lilpeep.jpg" }
     ],
     
     playlists: {
@@ -288,14 +273,7 @@ const spotifyData = {
             color: "#9370DB",
             songs: createPlaylistSongs(lilPeepSongs, "lilpeep")
         },
-        "mix": {
-            id: "mix",
-            name: "Mix",
-            description: mixSongs.length + " tracks",
-            cover: "images/mix.jpg",
-            color: "#FFA500",
-            songs: createPlaylistSongs(mixSongs, "mix")
-        }
+
     }
 };
 
