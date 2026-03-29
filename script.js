@@ -173,7 +173,7 @@ function createPlaylistSongs(songsArray, artistFolder) {
         title: song.title,
         artist: song.artist,
         duration: song.duration,
-        cover: `images/${artistFolder}.jpg`,
+        cover: `images/${artistFolder}/${song.title}.jpg`,
         file: `audio/${artistFolder}/${song.artist} - ${song.title}.mp3`,
         plays: Math.floor(Math.random() * 1000000)
     }));
