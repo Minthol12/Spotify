@@ -167,15 +167,17 @@ const mixSongs = [
 
 // ============ CREATE PLAYLISTS WITH CORRECT FILE PATHS ============
 
-function createPlaylistSongs(songsArray, artistFolder) {
+function createPlaylistSongs(songsArray, artistFolder, useDefaultCover = false) {
     return songsArray.map((song, index) => ({
         id: `${artistFolder}_${index}`,
         title: song.title,
         artist: song.artist,
         duration: song.duration,
-        cover: `images/${artistFolder}/${song.title}.jpg`,
-        file: `audio/${artistFolder}/${song.artist} - ${song.title}.mp3`,
-        plays: Math.floor(Math.random() * 1000000)
+        cover: useDefaultCover
+            ? `images/${artistFolder}.jpg`
+            : `images/${artistFolder}/${song.title}.jpg`,
+            file: `audio/${artistFolder}/${song.artist} - ${song.title}.mp3`,
+            plays: Math.floor(Math.random() * 1000000)
     }));
 }
 
@@ -195,7 +197,7 @@ const spotifyData = {
             description: suicideboysSongs.length + " tracks",
             cover: "images/suicideboys.jpg",
             color: "#8B0000",
-            songs: createPlaylistSongs(suicideboysSongs, "suicideboys")
+            songs: createPlaylistSongs(suicideboysSongs, "suicideboys", true)
         },
         "bones": {
             id: "bones",
@@ -203,7 +205,7 @@ const spotifyData = {
             description: bonesSongs.length + " tracks",
             cover: "images/bones.jpg",
             color: "#2F4F4F",
-            songs: createPlaylistSongs(bonesSongs, "bones")
+            songs: createPlaylistSongs(bonesSongs, "bones", true)
         },
         "ghostemane": {
             id: "ghostemane",
@@ -211,7 +213,7 @@ const spotifyData = {
             description: ghostemaneSongs.length + " tracks",
             cover: "images/ghostemane.jpg",
             color: "#9400D3",
-            songs: createPlaylistSongs(ghostemaneSongs, "ghostemane")
+            songs: createPlaylistSongs(ghostemaneSongs, "ghostemane", true)
         },
         "jazeek": {
             id: "jazeek",
@@ -219,7 +221,7 @@ const spotifyData = {
             description: jazeekSongs.length + " tracks",
             cover: "images/jazeek.jpg",
             color: "#000000",
-            songs: createPlaylistSongs(jazeekSongs, "jazeek")
+            songs: createPlaylistSongs(jazeekSongs, "jazeek", false)
         },
         "lilpeep": {
             id: "lilpeep",
@@ -227,7 +229,7 @@ const spotifyData = {
             description: lilPeepSongs.length + " tracks",
             cover: "images/lilpeep.jpg",
             color: "#9370DB",
-            songs: createPlaylistSongs(lilPeepSongs, "lilpeep")
+            songs: createPlaylistSongs(lilPeepSongs, "lilpeep", true)
         },
 
     }

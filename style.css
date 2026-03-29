@@ -841,7 +841,7 @@ body {
 .hero-title {
     display: flex;
     justify-content: space-between;
-    align-itmes: baseline;
+    align-items: baseline;
     width: 100%;
 }
 
