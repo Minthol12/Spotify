@@ -302,7 +302,7 @@ function showHomePage() {
     contentArea.innerHTML = `
         <div class="hero-section">
             <div class="hero-content">
-                <div class="hero-title">Welcome to Midnight!</div>
+                <div class="hero-title">Welcome to Midnight!               -Made by Zayne :)</div>
                 <div class="hero-subtitle">Your personal music library with ${totalSongs} songs</div>
                 <div class="hero-subtitle">🎧 ${Object.keys(spotifyData.playlists).length} playlists ready</div>
             </div>
